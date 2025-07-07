@@ -4,6 +4,8 @@ import Loading from 'react-simple-loading';
 import { GrNext, GrPrevious } from "react-icons/gr";
 import './App.css'
 import axios from 'axios';
+// Use Vite's import.meta.env for environment variables in frontend
+const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 function App() {
   // State to track the selected color for each product (by index)
@@ -24,7 +26,7 @@ function App() {
     const fetchProducts = async () => {
       try {
         // Make GET request to backend API to fetch products
-        const response = await axios.get('http://localhost:3000/api/products');
+        const response = await axios.get(`${VITE_BACKEND_URL}api/products`);
         setProducts(response.data); // Store products in state
       }
       catch (error) {

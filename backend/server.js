@@ -16,7 +16,7 @@ app.use(express.json());
 
 // Enable CORS to allow requests from the frontend (localhost:5173)
 app.use(cors({
-    origin: "http://localhost:5173", // Only allow requests from this origin
+    origin: "https://ecommerce-interface.onrender.com", // Only allow requests from this origin
     methods: ["GET", "POST", "PUT", "DELETE"], // Allow these HTTP methods
     credentials: true, // Allow credentials such as cookies or authorization headers
     allowedHeaders: "Content-Type" // Only allow Content-Type header
